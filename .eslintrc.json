@@ -1,0 +1,27 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["airbnb-base"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "off",
+      {
+        "devDependencies": true
+      }
+    ],
+    "global-require": "off",
+    "linebreak-style": "off",
+    "prefer-destructuring": "off",
+    "no-plusplus": "off",
+    "no-restricted-syntax": ["off", "ForOfStatement"],
+    "class-methods-use-this": "warn",
+    "no-unused-vars": "warn"
+  }
+}
