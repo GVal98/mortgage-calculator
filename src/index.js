@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     outputs: {
       mortrageYears: 'mortrage-years',
-      totalPayment: 'total-payment',
       overpaymentMortrage: 'overpayment-mortrage',
       rentYears: 'rent-years',
       overpaymentRent: 'overpayment-rent',

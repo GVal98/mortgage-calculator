@@ -10,3 +10,14 @@ html {
   padding: 0;
   margin: 0;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-4;
+}
+
+::selection {
+  background-color: $color-3;
+}

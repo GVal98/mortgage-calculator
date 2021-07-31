@@ -4,38 +4,114 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Калькулятор ипотеки</title>
   </head>
   <body>
     <header>
-      <h1>Калькулятор ипотеки</h1>
+      <h1 class="heading-1">Калькулятор ипотеки</h1>
     </header>
     <main>
-      <form id="container">
-        <label>В наличии<input id="down-payment" value="1000000" /></label>
-        <label>
-          Стоимость жилья<input id="property-value" value="5000000" />
-        </label>
-        <h2>Взять ипотеку</h2>
-        <label>
-          Процентная ставка<input id="mortrage-interest" value="8" />
-        </label>
-        <label>
-          Ежемесячный платёж<input id="monthly-payment" value="50000" />
-        </label>
-        <p>Выплачивать лет: <span id="mortrage-years"></span></p>
-        <p>Общая сумма платежей: <span id="total-payment"></span></p>
-        <p>Переплата: <span id="overpayment-mortrage"></span></p>
-        <h2>Арендовать и откладывать</h2>
-        <label>Аренда в месяц<input id="rent-value" value="20000" /></label>
-        <label>
-          Ежемесячный депозит<input id="monthly-savings" value="30000" />
-        </label>
-        <label>
-          Процентная ставка<input id="deposit-interest" value="8" />
-        </label>
-        <p>Копить лет: <span id="rent-years"></span></p>
-        <p>Переплата: <span id="overpayment-rent"></span></p>
+      <form id="container" class="calculator">
+        <div class="calculator__common-inputs">
+          <div class="calculator__input-group">
+            <label for="property-value" class="calculator__input-name">
+              Стоимость жилья
+            </label>
+            <input
+              id="property-value"
+              value="5000000"
+              class="calculator__input"
+            />
+          </div>
+          <div class="calculator__input-group">
+            <label for="down-payment" class="calculator__input-name">
+              Уже накоплено
+            </label>
+            <input
+              id="down-payment"
+              value="1000000"
+              class="calculator__input"
+            />
+          </div>
+        </div>
+        <div class="calculator__columns">
+          <div class="calculator__mortrage">
+            <h2 class="heading-2">Взять ипотеку</h2>
+            <div class="calculator__input-group">
+              <label for="mortrage-interest" class="calculator__input-name">
+                Процентная ставка
+              </label>
+              <input
+                id="mortrage-interest"
+                value="8"
+                class="calculator__input"
+              />
+            </div>
+            <div class="calculator__input-group">
+              <label for="monthly-payment" class="calculator__input-name">
+                Ежемесячный платёж
+              </label>
+              <input
+                id="monthly-payment"
+                value="50000"
+                class="calculator__input"
+              />
+            </div>
+          </div>
+          <div class="calculator__rent">
+            <h2 class="heading-2">Арендовать и откладывать</h2>
+            <div class="calculator__input-group">
+              <label for="rent-value" class="calculator__input-name">
+                Аренда в месяц
+              </label>
+              <input id="rent-value" value="20000" class="calculator__input" />
+            </div>
+            <div class="calculator__input-group">
+              <label for="monthly-savings" class="calculator__input-name">
+                Ежемесячный депозит
+              </label>
+              <input
+                id="monthly-savings"
+                value="30000"
+                class="calculator__input"
+              />
+            </div>
+            <div class="calculator__input-group">
+              <label for="deposit-interest" class="calculator__input-name">
+                Процентная ставка
+              </label>
+              <input
+                id="deposit-interest"
+                value="6"
+                class="calculator__input"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="calculator__columns">
+          <div class="calculator__mortrage">
+            <p class="calculator__result">
+              Выплачивать лет: <span id="mortrage-years"></span>
+            </p>
+            <p class="calculator__result">
+              Переплата: <span id="overpayment-mortrage"></span>
+            </p>
+          </div>
+          <div class="calculator__rent">
+            <p class="calculator__result">
+              Копить лет: <span id="rent-years"></span>
+            </p>
+            <p class="calculator__result">
+              Переплата: <span id="overpayment-rent"></span>
+            </p>
+          </div>
+        </div>
       </form>
     </main>
   </body>
