@@ -2,7 +2,7 @@ import { log, root } from './math';
 
 function calculateRentYears(yearInterestPercents, propertyValue, monthlySavings, downPayment) {
   const periods = 12;
-  const yearInterest = yearInterestPercents / 100;
+  const yearInterest = (yearInterestPercents || 0.01) / 100;
   const logBase = 1 + (yearInterest / periods);
   const rootNumber = (propertyValue - downPayment)
   / (monthlySavings * (periods / yearInterest) + downPayment) + 1;
@@ -25,6 +25,12 @@ export default function calculateRent(
   downPayment,
   rentValue,
 ) {
+  if (propertyValue < downPayment) {
+    return { rentYears: 0, overpaymentRent: 0, monthlySavings: 0 };
+  }
+  if (freeMoney < rentValue) {
+    return { rentYears: -1, overpaymentRent: -1, monthlySavings: 0 };
+  }
   const monthlySavings = calculateMonthlySavings(freeMoney, rentValue);
   const rentYears = calculateRentYears(
     yearInterestPercents,

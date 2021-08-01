@@ -71,7 +71,7 @@ export default class App {
 
   render(result) {
     for (const [key, output] of this.outputs) {
-      output.innerHTML = this.numberFormat.format(Math.round(result[key]));
+      output.innerHTML = this.formatResult(result[key]);
     }
   }
 
@@ -79,6 +79,10 @@ export default class App {
     for (const [key, input] of this.inputs) {
       this.values[key] = +this.cleanNumber(input.value);
     }
+  }
+
+  formatResult(value) {
+    return (value < 0 || Number.isNaN(value)) ? '∞' : this.numberFormat.format(Math.round(value));
   }
 
   cleanNumber(value) {

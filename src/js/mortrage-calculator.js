@@ -1,7 +1,7 @@
 import { log } from './math';
 
 function calculateMortrageMonths(yearInterestPercents, creditAmount, monthlyPayment) {
-  const monthlyInterest = yearInterestPercents / 100 / 12;
+  const monthlyInterest = (yearInterestPercents || 0.01) / 100 / 12;
   const logBase = 1 + monthlyInterest;
   const logNumber = monthlyPayment / (monthlyPayment - creditAmount * monthlyInterest);
   return log(logBase, logNumber);
@@ -30,6 +30,9 @@ export default function calculateMortrage(
   yearInterestPercents,
 ) {
   const creditAmount = calculateCreditAmount(propertyValue, downPayment);
+  if (creditAmount <= 0) {
+    return { totalPayment: 0, overpaymentMortrage: 0, mortrageYears: 0 };
+  }
   const mortrageMonths = calculateMortrageMonths(
     yearInterestPercents,
     creditAmount,
