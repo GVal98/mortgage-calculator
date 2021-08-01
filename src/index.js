@@ -9,16 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
       downPayment: 'down-payment',
       propertyValue: 'property-value',
       mortrageInterest: 'mortrage-interest',
-      monthlyPayment: 'monthly-payment',
       rentValue: 'rent-value',
-      monthlySavings: 'monthly-savings',
       depositInterest: 'deposit-interest',
+      freeMoney: 'free-money',
     },
     outputs: {
       mortrageYears: 'mortrage-years',
       overpaymentMortrage: 'overpayment-mortrage',
       rentYears: 'rent-years',
       overpaymentRent: 'overpayment-rent',
+      monthlySavings: 'monthly-savings',
     },
   });
   app.init();

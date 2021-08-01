@@ -10,6 +10,10 @@ function calculateRentYears(yearInterestPercents, propertyValue, monthlySavings,
   return log(logBase, logNumber);
 }
 
+function calculateMonthlySavings(freeMoney, rentValue) {
+  return freeMoney - rentValue;
+}
+
 function calculateOverpayment(rentValue, rentYears) {
   return rentValue * rentYears * 12;
 }
@@ -17,10 +21,11 @@ function calculateOverpayment(rentValue, rentYears) {
 export default function calculateRent(
   yearInterestPercents,
   propertyValue,
-  monthlySavings,
+  freeMoney,
   downPayment,
   rentValue,
 ) {
+  const monthlySavings = calculateMonthlySavings(freeMoney, rentValue);
   const rentYears = calculateRentYears(
     yearInterestPercents,
     propertyValue,
@@ -28,5 +33,5 @@ export default function calculateRent(
     downPayment,
   );
   const overpaymentRent = calculateOverpayment(rentValue, rentYears);
-  return { rentYears, overpaymentRent };
+  return { rentYears, overpaymentRent, monthlySavings };
 }

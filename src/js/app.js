@@ -45,13 +45,13 @@ export default class App {
     const mortrage = calculateMortrage(
       this.values.propertyValue,
       this.values.downPayment,
-      this.values.monthlyPayment,
+      this.values.freeMoney,
       this.values.mortrageInterest,
     );
     const rent = calculateRent(
       this.values.depositInterest,
       this.values.propertyValue,
-      this.values.monthlySavings,
+      this.values.freeMoney,
       this.values.downPayment,
       this.values.rentValue,
     );
