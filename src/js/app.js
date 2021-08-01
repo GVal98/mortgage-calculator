@@ -7,6 +7,7 @@ export default class App {
   }
 
   init() {
+    this.numberFormat = new Intl.NumberFormat();
     this.values = {};
     this.findElements();
     this.container.addEventListener('input', (e) => this.update(e));
@@ -59,7 +60,7 @@ export default class App {
 
   render(result) {
     for (const [key, output] of this.outputs) {
-      output.innerHTML = Math.round(result[key]);
+      output.innerHTML = this.numberFormat.format(Math.round(result[key]));
     }
   }
 
