@@ -7,7 +7,7 @@ export default class App {
   }
 
   init() {
-    this.numberFormat = new Intl.NumberFormat();
+    this.numberFormat = new Intl.NumberFormat('ru-RU');
     this.values = {};
     this.findElements();
     this.container.addEventListener('input', (e) => this.update(e));
@@ -20,11 +20,22 @@ export default class App {
   }
 
   updateInput(input) {
+    const inputNumber = this.cleanNumber(input.value);
+    const formattedValue = this.formatNumber(inputNumber);
     if (input.type === 'range') {
-      input.previousElementSibling.value = input.value;
+      input.previousElementSibling.value = formattedValue;
       return;
     }
-    input.nextElementSibling.value = input.value;
+    input.value = formattedValue;
+    input.nextElementSibling.value = inputNumber.replace(/\.$/, '');
+  }
+
+  formatNumber(value) {
+    if (value.includes('.')) {
+      const [integer, decimal] = value.split('.');
+      return `${this.numberFormat.format(integer)},${decimal}`;
+    }
+    return this.numberFormat.format(value);
   }
 
   findElements() {
@@ -66,7 +77,11 @@ export default class App {
 
   getValues() {
     for (const [key, input] of this.inputs) {
-      this.values[key] = +input.value;
+      this.values[key] = +this.cleanNumber(input.value);
     }
+  }
+
+  cleanNumber(value) {
+    return value.replace(',', '.').replace(/[^\d.]/g, '');
   }
 }
