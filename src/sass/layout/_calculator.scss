@@ -44,6 +44,38 @@
   }
 }
 
+.calculator__slider {
+  width: 17rem;
+  height: 1rem;
+  margin-top: 0;
+  -webkit-appearance: none;
+  background: transparent;
+
+  &::-webkit-slider-thumb {
+    @include slider-thumb;
+  }
+
+  &::-moz-range-thumb {
+    @include slider-thumb;
+  }
+
+  &::-ms-thumb {
+    @include slider-thumb;
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include slider-track;
+  }
+
+  &::-moz-range-track {
+    @include slider-track;
+  }
+
+  &::-ms-track {
+    @include slider-track;
+  }
+}
+
 .calculator__result {
   padding-bottom: 1rem;
 }

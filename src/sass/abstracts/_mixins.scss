@@ -1,1 +1,18 @@
-//
+@mixin slider-track {
+  height: 1rem;
+  cursor: pointer;
+  background: $color-3;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+@mixin slider-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: -0.2rem;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: $color-1;
+  border: none;
+  border-radius: 50%;
+}

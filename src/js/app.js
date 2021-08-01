@@ -9,8 +9,21 @@ export default class App {
   init() {
     this.values = {};
     this.findElements();
-    this.container.addEventListener('change', () => this.calculate());
+    this.container.addEventListener('input', (e) => this.update(e));
     this.calculate();
+  }
+
+  update(e) {
+    this.updateInput(e.target);
+    this.calculate();
+  }
+
+  updateInput(input) {
+    if (input.type === 'range') {
+      input.previousElementSibling.value = input.value;
+      return;
+    }
+    input.nextElementSibling.value = input.value;
   }
 
   findElements() {
