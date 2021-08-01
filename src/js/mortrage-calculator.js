@@ -31,7 +31,9 @@ export default function calculateMortrage(
 ) {
   const creditAmount = calculateCreditAmount(propertyValue, downPayment);
   if (creditAmount <= 0) {
-    return { totalPayment: 0, overpaymentMortrage: 0, mortrageYears: 0 };
+    return {
+      totalPayment: 0, overpaymentMortrage: 0, mortrageYears: 0, monthlyPayment: 0,
+    };
   }
   const mortrageMonths = calculateMortrageMonths(
     yearInterestPercents,
@@ -41,5 +43,7 @@ export default function calculateMortrage(
   const totalPayment = calculateTotalPayment(monthlyPayment, mortrageMonths);
   const overpaymentMortrage = calculateOverpayment(totalPayment, creditAmount);
   const mortrageYears = calculateMortrageYears(mortrageMonths);
-  return { totalPayment, overpaymentMortrage, mortrageYears };
+  return {
+    totalPayment, overpaymentMortrage, mortrageYears, monthlyPayment,
+  };
 }

@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       rentYears: 'rent-years',
       overpaymentRent: 'overpayment-rent',
       monthlySavings: 'monthly-savings',
+      monthlyPayment: 'monthly-payment',
     },
   });
   app.init();
