@@ -21,7 +21,8 @@
     "prefer-destructuring": "off",
     "no-plusplus": "off",
     "no-restricted-syntax": ["off", "ForOfStatement"],
-    "class-methods-use-this": "warn",
-    "no-unused-vars": "warn"
+    "class-methods-use-this": "off",
+    "no-unused-vars": "warn",
+    "no-param-reassign": ["warn", { "props": false }]
   }
 }
