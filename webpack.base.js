@@ -20,7 +20,14 @@ module.exports = {
     }),
     new StylelintPlugin({ files: './src/sass/' }),
     new ESLintPlugin(),
-    new FaviconsWebpackPlugin({ logo: './src/logo.svg' }),
+    new FaviconsWebpackPlugin({
+      logo: './src/logo.svg',
+      favicons: {
+        icons: {
+          appleIcon: { background: false },
+        },
+      },
+    }),
   ],
   module: {
     rules: [
