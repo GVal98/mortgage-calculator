@@ -1,17 +1,33 @@
 body {
   font-family: 'Exo 2', sans-serif;
-  font-size: 2rem;
+  font-size: 2em;
   color: $color-1;
+
+  @include media-sm {
+    font-size: 1.6rem;
+  }
 }
 
 .heading-1 {
   margin-top: 2rem;
   margin-bottom: 3rem;
   font-size: 4rem;
+  text-align: center;
+
+  @include media-sm {
+    font-size: 3.5rem;
+  }
 }
 
 .heading-2 {
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 2.8rem;
+  text-align: center;
+
+  @include media-sm {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
 }

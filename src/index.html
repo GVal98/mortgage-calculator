@@ -89,6 +89,13 @@
         <div class="calculator__columns">
           <div class="calculator__mortrage">
             <h2 class="heading-2">Взять ипотеку</h2>
+          </div>
+          <div class="calculator__rent">
+            <h2 class="heading-2">Арендовать и откладывать</h2>
+          </div>
+        </div>
+        <div class="calculator__columns">
+          <div class="calculator__mortrage">
             <div class="calculator__input-group">
               <label for="mortrage-interest" class="calculator__input-name">
                 Процентная ставка
@@ -96,7 +103,7 @@
               <input
                 id="mortrage-interest"
                 value="8,5"
-                class="calculator__input"
+                class="calculator__input calculator__input--adaptive"
                 type="text"
                 inputmode="decimal"
                 autocomplete="off"
@@ -104,7 +111,7 @@
               <input
                 id="mortrage-interest-slider"
                 value="8.5"
-                class="calculator__slider"
+                class="calculator__slider calculator__slider--adaptive"
                 type="range"
                 min="0"
                 max="30"
@@ -113,7 +120,6 @@
             </div>
           </div>
           <div class="calculator__rent">
-            <h2 class="heading-2">Арендовать и откладывать</h2>
             <div class="calculator__input-group">
               <label for="deposit-interest" class="calculator__input-name">
                 Процентная ставка
@@ -121,7 +127,7 @@
               <input
                 id="deposit-interest"
                 value="6"
-                class="calculator__input"
+                class="calculator__input calculator__input--adaptive"
                 type="text"
                 inputmode="decimal"
                 autocomplete="off"
@@ -129,7 +135,7 @@
               <input
                 id="deposit-interest-slider"
                 value="6"
-                class="calculator__slider"
+                class="calculator__slider calculator__slider--adaptive"
                 type="range"
                 min="0"
                 max="100"
@@ -143,7 +149,7 @@
               <input
                 id="rent-value"
                 value="20 000"
-                class="calculator__input"
+                class="calculator__input calculator__input--adaptive"
                 type="text"
                 inputmode="decimal"
                 autocomplete="off"
@@ -151,7 +157,7 @@
               <input
                 id="rent-value-slider"
                 value="20000"
-                class="calculator__slider"
+                class="calculator__slider calculator__slider--adaptive"
                 type="range"
                 min="0"
                 max="300000"
@@ -165,20 +171,32 @@
             <p class="calculator__result">
               Ежемесячный платёж: <span id="monthly-payment"></span>
             </p>
-            <p class="calculator__result">
-              Выплачивать лет: <span id="mortrage-years"></span>
-            </p>
-            <p class="calculator__result">
-              Переплата: <span id="overpayment-mortrage"></span>
-            </p>
           </div>
           <div class="calculator__rent">
             <p class="calculator__result">
               Ежемесячный депозит: <span id="monthly-savings"></span>
             </p>
+          </div>
+        </div>
+        <div class="calculator__columns">
+          <div class="calculator__mortrage">
+            <p class="calculator__result">
+              Выплачивать лет: <span id="mortrage-years"></span>
+            </p>
+          </div>
+          <div class="calculator__rent">
             <p class="calculator__result">
               Копить лет: <span id="rent-years"></span>
             </p>
+          </div>
+        </div>
+        <div class="calculator__columns">
+          <div class="calculator__mortrage">
+            <p class="calculator__result">
+              Переплата: <span id="overpayment-mortrage"></span>
+            </p>
+          </div>
+          <div class="calculator__rent">
             <p class="calculator__result">
               Переплата: <span id="overpayment-rent"></span>
             </p>

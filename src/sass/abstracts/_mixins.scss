@@ -16,3 +16,15 @@
   border: none;
   border-radius: 50%;
 }
+
+@mixin media-md {
+  @media (max-width: 56.25em) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media (max-width: 46.875em) {
+    @content;
+  }
+}

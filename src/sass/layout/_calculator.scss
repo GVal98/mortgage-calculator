@@ -3,18 +3,29 @@
   justify-content: center;
 }
 
-.calculator__mortrage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 40rem;
-}
-
+.calculator__mortrage,
 .calculator__rent {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 40rem;
+
+  @include media-md {
+    width: 34rem;
+  }
+
+  @include media-sm {
+    width: 100%;
+    max-width: 34rem;
+  }
+}
+
+.calculator__mortrage {
+  margin-right: 0.5rem;
+}
+
+.calculator__rent {
+  margin-left: 0.5rem;
 }
 
 .calculator__input-group {
@@ -22,6 +33,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .calculator__input-name {
@@ -44,12 +56,19 @@
   }
 }
 
+.calculator__input--adaptive {
+  @include media-sm {
+    width: 15rem;
+  }
+}
+
 .calculator__slider {
   width: 17rem;
   height: 1rem;
   margin-top: 0;
-  -webkit-appearance: none;
   background: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
 
   &::-webkit-slider-thumb {
     @include slider-thumb;
@@ -76,6 +95,13 @@
   }
 }
 
+.calculator__slider--adaptive {
+  @include media-sm {
+    width: 12.75rem;
+  }
+}
+
 .calculator__result {
   padding-bottom: 1rem;
+  text-align: center;
 }
