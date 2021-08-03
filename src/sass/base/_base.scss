@@ -1,0 +1,37 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-4;
+
+  @include media-sm {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+}
+
+.main {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.footer {
+  margin-bottom: 3rem;
+}
+
+::selection {
+  background-color: $color-3;
+}

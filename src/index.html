@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:title" content="Калькулятор ипотеки" />
+    <meta
+      property="og:description"
+      content="Взять ипотеку или снимать и откладывать?"
+    />
+    <meta
+      property="og:image"
+      content="https://gval98.com/mortrage-calculator/social-preview.jpg"
+    />
+    <meta property="og:url" content="https://gval98.com/mortrage-calculator" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Калькулятор ипотеки</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="heading-1">Калькулятор ипотеки</h1>
+    </header>
+    <main class="main">
+      <form id="container" class="calculator">
+        <div class="calculator__common-inputs">
+          <div class="calculator__input-group">
+            <label for="property-value" class="calculator__input-name">
+              Стоимость жилья
+            </label>
+            <input
+              id="property-value"
+              value="5 000 000"
+              class="calculator__input"
+              type="text"
+              inputmode="decimal"
+              autocomplete="off"
+            />
+            <input
+              id="property-value-slider"
+              value="5000000"
+              class="calculator__slider"
+              type="range"
+              min="1000000"
+              max="20000000"
+              step="200000"
+            />
+          </div>
+          <div class="calculator__input-group">
+            <label for="down-payment" class="calculator__input-name">
+              Уже накоплено
+            </label>
+            <input
+              id="down-payment"
+              value="1 000 000"
+              class="calculator__input"
+              type="text"
+              inputmode="decimal"
+              autocomplete="off"
+            />
+            <input
+              id="down-payment-slider"
+              value="1000000"
+              class="calculator__slider"
+              type="range"
+              min="0"
+              max="10000000"
+              step="100000"
+            />
+          </div>
+          <div class="calculator__input-group">
+            <label for="free-money" class="calculator__input-name">
+              Свободных денег ежемесячно
+            </label>
+            <input
+              id="free-money"
+              value="50 000"
+              class="calculator__input"
+              type="text"
+              inputmode="decimal"
+              autocomplete="off"
+            />
+            <input
+              id="free-money-slider"
+              value="50000"
+              class="calculator__slider"
+              type="range"
+              min="10000"
+              max="500000"
+              step="10000"
+            />
+          </div>
+        </div>
+        <div class="calculator__columns">
+          <div class="calculator__mortrage">
+            <h2 class="heading-2">Взять ипотеку</h2>
+          </div>
+          <div class="calculator__rent">
+            <h2 class="heading-2">Арендовать и откладывать</h2>
+          </div>
+        </div>
+        <div class="calculator__columns">
+          <div class="calculator__mortrage">
+            <div class="calculator__input-group">
+              <label for="mortrage-interest" class="calculator__input-name">
+                Процентная ставка
+              </label>
+              <input
+                id="mortrage-interest"
+                value="8,5"
+                class="calculator__input calculator__input--adaptive"
+                type="text"
+                inputmode="decimal"
+                autocomplete="off"
+              />
+              <input
+                id="mortrage-interest-slider"
+                value="8.5"
+                class="calculator__slider calculator__slider--adaptive"
+                type="range"
+                min="0"
+                max="30"
+                step="0.5"
+              />
+            </div>
+          </div>
+          <div class="calculator__rent">
+            <div class="calculator__input-group">
+              <label for="deposit-interest" class="calculator__input-name">
+                Процентная ставка
+              </label>
+              <input
+                id="deposit-interest"
+                value="6"
+                class="calculator__input calculator__input--adaptive"
+                type="text"
+                inputmode="decimal"
+                autocomplete="off"
+              />
+              <input
+                id="deposit-interest-slider"
+                value="6"
+                class="calculator__slider calculator__slider--adaptive"
+                type="range"
+                min="0"
+                max="100"
+                step="0.5"
+              />
+            </div>
+            <div class="calculator__input-group">
+              <label for="rent-value" class="calculator__input-name">
+                Аренда в месяц
+              </label>
+              <input
+                id="rent-value"
+                value="20 000"
+                class="calculator__input calculator__input--adaptive"
+                type="text"
+                inputmode="decimal"
+                autocomplete="off"
+              />
+              <input
+                id="rent-value-slider"
+                value="20000"
+                class="calculator__slider calculator__slider--adaptive"
+                type="range"
+                min="0"
+                max="300000"
+                step="10000"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="calculator__columns">
+          <div class="calculator__mortrage">
+            <p class="calculator__result">
+              Ежемесячный платёж: <span id="monthly-payment"></span>
+            </p>
+          </div>
+          <div class="calculator__rent">
+            <p class="calculator__result">
+              Ежемесячный депозит: <span id="monthly-savings"></span>
+            </p>
+          </div>
+        </div>
+        <div class="calculator__columns">
+          <div class="calculator__mortrage">
+            <p class="calculator__result">
+              Выплачивать лет: <span id="mortrage-years"></span>
+            </p>
+          </div>
+          <div class="calculator__rent">
+            <p class="calculator__result">
+              Копить лет: <span id="rent-years"></span>
+            </p>
+          </div>
+        </div>
+        <div class="calculator__columns">
+          <div class="calculator__mortrage">
+            <p class="calculator__result">
+              Переплата: <span id="overpayment-mortrage"></span>
+            </p>
+          </div>
+          <div class="calculator__rent">
+            <p class="calculator__result">
+              Переплата: <span id="overpayment-rent"></span>
+            </p>
+          </div>
+        </div>
+      </form>
+    </main>
+    <footer class="footer">
+      <a href="https://gval98.com" class="link">GVal98.com</a>
+    </footer>
+  </body>
+</html>
