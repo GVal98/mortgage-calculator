@@ -18,3 +18,9 @@ Working app (rus): https://gval98.com/mortrage-calculator
 - HTML
 
 ![Screenshot](https://i.ibb.co/48mQn0L/mortrage-calculator-screenjpg.jpg)
+
+### Use:
+
+Install: `npm install`
+Build: `npm run build`
+Dev server: `npm start`
