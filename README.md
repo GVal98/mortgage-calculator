@@ -1,6 +1,6 @@
 # Mortage Calculator
 
-Working app (rus): https://gval98.github.io/mortrageCalculator/
+Live demo: https://gval98.github.io/mortrageCalculator/
 
 ### Features:
 
