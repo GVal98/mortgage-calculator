@@ -1,12 +1,12 @@
 # Mortage Calculator
 
-Working app (rus): https://gval98.com/mortrage-calculator
+Working app (rus): https://gval98.github.io/mortrageCalculator/
 
 ### Features:
 
 - Helps you decide whether it's better to take out a mortgage or rent and save
 - Responsive design
-- Fast loading due to the absence of frameworks and Webpack, Babel, PostCSS minification
+- Fast loading due to Webpack, Babel, PostCSS minification and the absence of frameworks. Configured from scratch
 
 ### Stack:
 
