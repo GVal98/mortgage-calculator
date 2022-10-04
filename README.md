@@ -1,6 +1,6 @@
-# Mortage Calculator
+# Mortgage Calculator
 
-Live demo: https://gval98.github.io/mortrageCalculator/
+Live demo: https://gval98.github.io/mortgageCalculator/
 
 ### Features:
 
